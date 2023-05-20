@@ -43,6 +43,7 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
 //        SimpleDateFormat input= new SimpleDateFormat("yyyy-mm-dd hh:mm");
 //        SimpleDateFormat output= new SimpleDateFormat("hh:mm aa");
 //        try{
+
 //            Date t= input.parse(model.getTime());
 //            holder.timeTV.setText(output.format(t));
 //        } catch (ParseException e) {
