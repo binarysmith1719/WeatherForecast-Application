@@ -40,14 +40,6 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
         holder.windTV.setText(model.getCondition());
         holder.timeTV.setText(model.getTime());
         Picasso.get().load(model.getIcon()).into(holder.conditionIV);
-//        SimpleDateFormat input= new SimpleDateFormat("yyyy-mm-dd hh:mm");
-//        SimpleDateFormat output= new SimpleDateFormat("hh:mm aa");
-//        try{
-//            Date t= input.parse(model.getTime());
-//            holder.timeTV.setText(output.format(t));
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
     }
 
     @Override
