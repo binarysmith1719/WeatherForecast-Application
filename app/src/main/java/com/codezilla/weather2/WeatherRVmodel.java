@@ -5,7 +5,7 @@ public class WeatherRVmodel {
     private String time;
     private String temperature;
     private String icon;
-    private String windspeed;
+    private String condition;
 
     public String getTime() {
         return time;
@@ -17,6 +17,14 @@ public class WeatherRVmodel {
 
     public String getTemperature() {
         return temperature;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
     public void setTemperature(String temperature) {
@@ -31,18 +39,12 @@ public class WeatherRVmodel {
         this.icon = icon;
     }
 
-    public String getWindspeed() {
-        return windspeed;
-    }
 
-    public void setWindspeed(String windspeed) {
-        this.windspeed = windspeed;
-    }
 
     public WeatherRVmodel(String time, String temperature, String icon, String windspeed) {
         this.time = time;
         this.temperature = temperature;
         this.icon = icon;
-        this.windspeed = windspeed;
+        this.condition = windspeed;
     }
 }

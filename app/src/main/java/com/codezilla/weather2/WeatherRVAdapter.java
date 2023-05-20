@@ -1,4 +1,5 @@
 package com.codezilla.weather2;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,8 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
@@ -27,25 +28,26 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
 
     @NonNull
     @Override
-    public WeatherRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(context).inflate(R.layout.weather_rv_item,parent,false);
-         return new ViewHolder(view);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull WeatherRVAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         WeatherRVmodel model = weatherRVmodelArrayList.get(position);
         holder.temperatureTV.setText(model.getTemperature()+ "°C");
-        holder.windTV.setText(model.getWindspeed() + "km/hr");
-        Picasso.get().load("http:".concat(model.getIcon())).into(holder.conditionIV);
-        SimpleDateFormat input= new SimpleDateFormat("yyyy-mm-dd hh:mm");
-        SimpleDateFormat output= new SimpleDateFormat("hh:mm aa");
-        try{
-            Date t= input.parse(model.getTime());
-            holder.timeTV.setText(output.format(t));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        holder.windTV.setText(model.getCondition());
+        holder.timeTV.setText(model.getTime());
+        Picasso.get().load(model.getIcon()).into(holder.conditionIV);
+//        SimpleDateFormat input= new SimpleDateFormat("yyyy-mm-dd hh:mm");
+//        SimpleDateFormat output= new SimpleDateFormat("hh:mm aa");
+//        try{
+//            Date t= input.parse(model.getTime());
+//            holder.timeTV.setText(output.format(t));
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
@@ -56,7 +58,7 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView temperatureTV,timeTV,windTV;
-               private ImageView conditionIV;
+        private ImageView conditionIV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             windTV=itemView.findViewById(R.id.idWindspeed);
