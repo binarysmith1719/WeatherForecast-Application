@@ -1,4 +1,4 @@
-package com.codezilla.weather2;
+package com.codezilla;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package com.codezilla.weatherforecast;
+package com.codezilla;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.codezilla.weatherforecast", appContext.getPackageName());
+        assertEquals("com.codezilla.weather2", appContext.getPackageName());
     }
 }
