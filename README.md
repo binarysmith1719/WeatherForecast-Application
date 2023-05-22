@@ -1,2 +1,6 @@
 # WeatherForecast-Application
-In this I used Volley library. 
+- I have used openWeather Api to fetch the forecast information.
+- Have used Volley library to make requests to the Api.
+- Used Picasso to fetch images.
+
+
