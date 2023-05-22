@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         searchIV=findViewById(R.id.idIVsearch);
         iconIV=findViewById(R.id.idIVIcon);
         weatherRVmodelArrayList=new ArrayList<>();
-        Log.d("giv","here1");
+//        Log.d("giv","here1");
         weatherRVAdapter=new WeatherRVAdapter(this,weatherRVmodelArrayList);
         weatherRV.setAdapter(weatherRVAdapter);
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this, "Searching", Toast.LENGTH_SHORT).show();
                 String city= cityEdt.getText().toString();
                 cname=city;
-                Log.d("giv",city);
+//                Log.d("giv",city);
                 if(city.isEmpty())
                 {
                     Toast.makeText(MainActivity.this, "Please enter city name", Toast.LENGTH_SHORT).show();
